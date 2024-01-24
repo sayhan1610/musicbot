@@ -12,13 +12,11 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+# Function to start JMusicBot
 def start_jmusicbot():
-    # Install OpenJDK
-    subprocess.run(['apt-get', 'update'])
-    subprocess.run(['apt-get', 'install', 'openjdk-11-jre', '-y'])
-
     # Run JMusicBot
     subprocess.run(['java', '-Dnogui=true', '-jar', 'JMusicBot-X.Y.Z.jar'])
+
 
 
 # Run Flask and Discord bot
